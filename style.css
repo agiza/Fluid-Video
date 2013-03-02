@@ -1,0 +1,17 @@
+/* =============================================
+ * FluidVideo.js Styles
+ * ============================================= */
+
+.fluid-video-wrapper {
+    padding: 0;
+    position: relative;
+    width: 100%; }
+
+.fluid-video-wrapper iframe {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%; }
+
+.no-js iframe { max-width: 100%; }

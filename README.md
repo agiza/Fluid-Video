@@ -1,6 +1,6 @@
 # Fluid Video #
 
-A streamlined version of the [FitVids.js](https://github.com/davatron5000) jQuery plugin for fluid video embeds.
+A spin-off version of the [FitVids.js](https://github.com/davatron5000) jQuery plugin for fluid video embeds.
 
 ## Demo
 
@@ -26,6 +26,10 @@ var options = {
 
 $('.post').find('iframe').fluidVideo(options);
 ```
+
+### Demo
+
+See it in action: [JSFiddle](http://jsfiddle.net/kylemade/8s3aj/embedded/result/).
 
 ## Change Log
 

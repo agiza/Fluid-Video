@@ -13,13 +13,15 @@
 	"use strict";
 
 	$.fn.fluidVideo = function (options) {
-		var width,
+		var src,
+			width,
 			height,
 			settings,
 			aspectRatio,
 			$video;
 
 		settings = $.extend({
+			vendors: {},
 			parentClass: "fluid-video-wrapper"
 		}, options);
 
@@ -43,6 +45,18 @@
 				.wrap('<div class="' + settings.parentClass + '" />')
 				.parent('.' + settings.parentClass)
 				.css("padding-top", (aspectRatio * 100) + "%");
+
+			// Run the correct callback for the video based on its vendor
+
+			if (settings.vendors) {
+				src = $video.attr("src").toLowerCase();
+
+				$.each(settings.vendors, function (k) {
+					if ((src.indexOf(k.toLowerCase()) > -1) && settings.vendors[k].callback) {
+						settings.vendors[k].callback($video, src);
+					}
+				});
+			}
 		});
 	};
 

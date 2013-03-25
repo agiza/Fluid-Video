@@ -2,7 +2,7 @@
 
 A spin-off version of the [FitVids.js](https://github.com/davatron5000) jQuery plugin for fluid video embeds.
 
-## Demo
+## Examples
 
 ### Basic Usage
 

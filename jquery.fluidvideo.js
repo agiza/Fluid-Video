@@ -1,7 +1,7 @@
 /**
  * Fluid Video
  * @author Kyle Weiner
- * @version 1.0
+ * @version 1.1
  *
  * Copyright 2013 Kyle Weiner, http://kylemade.com
  * Released under the MIT License <http://www.opensource.org/licenses/mit-license.php>

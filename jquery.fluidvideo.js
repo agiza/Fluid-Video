@@ -16,14 +16,10 @@
         var src,
             width,
             height,
-            settings,
             aspectRatio,
             $video;
 
-        settings = $.extend({
-            vendors: {},
-            parentClass: "fluid-video-wrapper"
-        }, options);
+        options = $.extend({}, $.fn.fluidVideo.defaults, options);
 
         this.each(function () {
             $video = $(this);
@@ -42,22 +38,27 @@
             $video
                 .removeAttr("width")
                 .removeAttr("height")
-                .wrap('<div class="' + settings.parentClass + '" />')
-                .parent('.' + settings.parentClass)
+                .wrap('<div class="' + options.parentClass + '" />')
+                .parent('.' + options.parentClass)
                 .css("padding-top", (aspectRatio * 100) + "%");
 
             // Run the correct callback for the video based on its vendor
 
-            if (settings.vendors) {
+            if (options.vendors) {
                 src = $video.attr("src").toLowerCase();
 
-                $.each(settings.vendors, function (k) {
-                    if ((src.indexOf(k.toLowerCase()) > -1) && settings.vendors[k].callback) {
-                        settings.vendors[k].callback($video, src);
+                $.each(options.vendors, function (k) {
+                    if ((src.indexOf(k.toLowerCase()) > -1) && options.vendors[k].callback) {
+                        options.vendors[k].callback($video, src);
                     }
                 });
             }
         });
+    };
+
+    $.fn.fluidVideo.defaults = {
+        vendors: {},
+        parentClass: "fluid-video-wrapper"
     };
 
 }(jQuery));
